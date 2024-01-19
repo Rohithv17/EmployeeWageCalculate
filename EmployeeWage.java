@@ -6,18 +6,27 @@ public class EmployeeWage {
         int Part_TIME = 1;
         int emphr=0,empwage=0;
         int wageperhr=20;
-        double empCheck = Math.floor(Math.random() * 10) % 3;
+        int empCheck =(int) Math.floor(Math.random() * 10) % 3;
 
-        if (empCheck == FULL_TIME) {
-            //System.out.println("Employee is Present");
-            emphr=8;
-        } else if (empCheck == Part_TIME) {
-            emphr=4;
-        } else  {
-            System.out.println("Employee is Absent");
+
+        switch(empCheck){
+            case 1:
+                emphr=4;
+                break;
+            case 2:
+                emphr=8;
+                break;
+            default:
+                System.out.println("Employee is Absent");
+                emphr=0;
         }
-        empwage=emphr*wageperhr;
-        System.out.println("Employee wage for day:"+empwage);
+        /*if (empCheck == FULL_TIME)
+            System.out.println("Employee is Present");
+        else if (empCheck == Part_TIME)
+         else
+                */
 
+        empwage=emphr*wageperhr;
+        System.out.println("Emplyee wage for day ="+empwage);
     }
 }
